@@ -1,0 +1,66 @@
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\libFLAC-8.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\libjpeg-9.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\libmodplug-1.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\libmpg123-0.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\libogg-0.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\libopus-0.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\libopusfile-0.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\libpng16-16.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\libtiff-5.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\libvorbis-0.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\libwebp-7.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\SDL2.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\SDL2_image.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\SDL2_mixer.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\SDL2_ttf.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\zlib1.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\UML_Simulator_SDL2.exe
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\UML_Simulator_SDL2.deps.json
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\UML_Simulator_SDL2.runtimeconfig.json
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\UML_Simulator_SDL2.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\UML_Simulator_SDL2.pdb
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\bin\Debug\net6.0\Sayers.SDL2.Core.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\obj\Debug\net6.0\UML_Simulator_SDL2.csproj.AssemblyReference.cache
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\obj\Debug\net6.0\UML_Simulator_SDL2.GeneratedMSBuildEditorConfig.editorconfig
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\obj\Debug\net6.0\UML_Simulator_SDL2.AssemblyInfoInputs.cache
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\obj\Debug\net6.0\UML_Simulator_SDL2.AssemblyInfo.cs
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\obj\Debug\net6.0\UML_Simulator_SDL2.csproj.CoreCompileInputs.cache
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\obj\Debug\net6.0\UML_Simulator_SDL2.csproj.CopyComplete
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\obj\Debug\net6.0\UML_Simulator_SDL2.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\obj\Debug\net6.0\refint\UML_Simulator_SDL2.dll
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\obj\Debug\net6.0\UML_Simulator_SDL2.pdb
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\obj\Debug\net6.0\UML_Simulator_SDL2.genruntimeconfig.cache
+F:\University Workspace\SoftwareEngineering\UML_Simulator_SDL2\obj\Debug\net6.0\ref\UML_Simulator_SDL2.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\libFLAC-8.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\libjpeg-9.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\libmodplug-1.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\libmpg123-0.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\libogg-0.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\libopus-0.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\libopusfile-0.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\libpng16-16.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\libtiff-5.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\libvorbis-0.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\libwebp-7.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\SDL2.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\SDL2_image.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\SDL2_mixer.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\SDL2_ttf.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\zlib1.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\UML_Simulator_SDL2.exe
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\UML_Simulator_SDL2.deps.json
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\UML_Simulator_SDL2.runtimeconfig.json
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\UML_Simulator_SDL2.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\UML_Simulator_SDL2.pdb
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\bin\Debug\net6.0\Sayers.SDL2.Core.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\obj\Debug\net6.0\UML_Simulator_SDL2.csproj.AssemblyReference.cache
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\obj\Debug\net6.0\UML_Simulator_SDL2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\obj\Debug\net6.0\UML_Simulator_SDL2.AssemblyInfoInputs.cache
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\obj\Debug\net6.0\UML_Simulator_SDL2.AssemblyInfo.cs
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\obj\Debug\net6.0\UML_Simulator_SDL2.csproj.CoreCompileInputs.cache
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\obj\Debug\net6.0\UML_Simulator_SDL2.csproj.CopyComplete
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\obj\Debug\net6.0\UML_Simulator_SDL2.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\obj\Debug\net6.0\refint\UML_Simulator_SDL2.dll
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\obj\Debug\net6.0\UML_Simulator_SDL2.pdb
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\obj\Debug\net6.0\UML_Simulator_SDL2.genruntimeconfig.cache
+C:\Users\Joshu\Source\Repos\jrussell2021\JR_UML_Simulator\obj\Debug\net6.0\ref\UML_Simulator_SDL2.dll
