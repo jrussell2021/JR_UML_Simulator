@@ -92,7 +92,7 @@ namespace UML_Simulator_SDL2
         static void Main(string[] args)
         {
             CreateWindow();
-
+            Console.WriteLine("Git ignore test");
             Window.Instance.InitFont();
             Window.Instance.sampleColour.r = 0;
             Window.Instance.sampleColour.g = 0;
