@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\bin",
+    "\\obj"
   ],
+  "SelectedNode": "\\Window.cs",
   "PreviewInSolutionExplorer": false
 }
