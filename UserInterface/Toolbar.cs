@@ -33,6 +33,22 @@ namespace UML_Simulator_SDL2.UserInterface
 
         public void InitToolbar()
         {
+            //Add main menu button
+            buttonList.Add(new MainMenuButton());
+            buttonList[buttonList.Count - 1]._rect.x = xpos;
+            buttonList[buttonList.Count - 1]._rect.y = 10;
+            buttonList[buttonList.Count - 1]._rect.w = 120;
+            buttonList[buttonList.Count - 1]._rect.h = 80;
+
+            buttonList[buttonList.Count - 1]._textBox.SetTextSurface(Window.Instance.font, buttonList[buttonList.Count - 1].text, Window.Instance.sampleColour);
+
+            buttonList[buttonList.Count - 1]._textBox.SetText(Window.Instance.renderer);
+            buttonList[buttonList.Count - 1]._textBox._rect.x = xpos + 10;
+            buttonList[buttonList.Count - 1]._textBox._rect.y = 30;
+            buttonList[buttonList.Count - 1]._textBox._rect.w = 100;
+            buttonList[buttonList.Count - 1]._textBox._rect.h = 40;
+            xpos += 130;
+
             //Add element button
             buttonList.Add(new AddElementButton());
             buttonList[buttonList.Count - 1]._rect.x = xpos;

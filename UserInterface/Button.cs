@@ -31,6 +31,20 @@ namespace UML_Simulator_SDL2.UserInterface
         }
     }
 
+    class MainMenuButton : Button
+    {
+        public MainMenuButton()
+        {
+            text = "Main Menu";
+        }
+
+        public override void OnClick()
+        {
+            MainMenu.Instance.isActive = !MainMenu.Instance.isActive;
+        }
+
+    }
+
     class AddElementButton : Button
     {
         public AddElementButton()

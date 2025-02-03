@@ -50,6 +50,27 @@ namespace UML_Simulator_SDL2
             
         }
 
+        public void DrawElements()
+        {
+            for (int i = 0; i < elementList.Count; i++)
+            {
+                SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 55, 55, 55, 255);
+                if (elementList[i]._type == "link")
+                {
+                    SDL.SDL_RenderDrawLine(Window.Instance.renderer, elementList[i]._rect.x, elementList[i]._rect.y, elementList[i]._rect.w, elementList[i]._rect.h);
+                }
+                else
+                {
+                    SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 255, 255, 255, 255);
+                    SDL.SDL_RenderFillRect(Window.Instance.renderer, ref elementList[i]._rect);
+                    SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 55, 55, 55, 255);
+                    SDL.SDL_RenderDrawRect(Window.Instance.renderer, ref elementList[i]._rect);
+                    elementList[i]._textBox.DrawText(Window.Instance.renderer);
+                }
+
+            }
+        }
+
         public List<DiagramElement> elementList = new List<DiagramElement>();
 
     }
