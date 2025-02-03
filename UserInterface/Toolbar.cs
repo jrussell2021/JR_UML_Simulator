@@ -78,5 +78,19 @@ namespace UML_Simulator_SDL2.UserInterface
                 buttonList[i]._textBox.DrawText(Window.Instance.renderer);
             }
         }
+
+        public bool CheckToolbarInteraction()
+        {
+            for(int i = 0; i < buttonList.Count; i++)
+            {
+                if (buttonList[i].IsMouseInBounds() == true)
+                {
+                    buttonList[i].OnClick();
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }

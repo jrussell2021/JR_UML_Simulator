@@ -14,6 +14,21 @@ namespace UML_Simulator_SDL2.UserInterface
         public TextBox _textBox = new();
 
         public abstract void OnClick();
+        public bool IsMouseInBounds()
+        {
+            int x, y = 0;
+            SDL.SDL_GetMouseState(out x, out y);
+
+            if(x >= _rect.x && y >= _rect.y && x <= (_rect.x + _rect.w) && y <= (_rect.y + _rect.h))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
     }
 
     class AddElementButton : Button

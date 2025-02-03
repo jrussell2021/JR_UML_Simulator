@@ -41,15 +41,19 @@ namespace UML_Simulator_SDL2
                         }
                         break;
                     case SDL.SDL_EventType.SDL_MOUSEBUTTONDOWN:
-                        if(mode == 0)
+                        if(UserInterface.Toolbar.Instance.CheckToolbarInteraction() == false)
                         {
-                            ElementManager.Instance.AddElement();
+                            if (UserInterface.Toolbar.Instance.mode == 0)
+                            {
+                                ElementManager.Instance.AddElement();
+                            }
+                            else if (UserInterface.Toolbar.Instance.mode == 1)
+                            {
+                                Link testLink = new Link();
+                                testLink.Create();
+                            }
                         }
-                        else if(mode == 1)
-                        {
-                            Link testLink = new Link();
-                            testLink.Create();
-                        }
+                        
                             
                         break;
                     case SDL.SDL_EventType.SDL_MOUSEBUTTONUP:
