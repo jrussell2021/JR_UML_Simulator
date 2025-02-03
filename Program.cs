@@ -16,7 +16,7 @@ namespace UML_Simulator_SDL2
                         Window.Instance.running = false;
                         break;
                     case SDL.SDL_EventType.SDL_MOUSEBUTTONDOWN:
-                        if (UserInterface.MainMenu.Instance.CheckMainMenuInteraction() == false)
+                        if (!UserInterface.MainMenu.Instance.isActive || UserInterface.MainMenu.Instance.CheckMainMenuInteraction() == false)
                         {
                             if (UserInterface.Toolbar.Instance.CheckToolbarInteraction() == false)
                             {

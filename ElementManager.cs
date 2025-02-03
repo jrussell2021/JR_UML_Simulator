@@ -71,6 +71,10 @@ namespace UML_Simulator_SDL2
             }
         }
 
+        public void ClearElements()
+        {
+            elementList.Clear();
+        }
         public List<DiagramElement> elementList = new List<DiagramElement>();
 
     }

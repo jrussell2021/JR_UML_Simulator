@@ -45,6 +45,25 @@ namespace UML_Simulator_SDL2.UserInterface
 
     }
 
+    class TestDiagramButton : Button
+    {
+        public TestDiagramButton()
+        {
+            text = "Test Diagram";
+        }
+
+        public override void OnClick()
+        {
+            //Start new test diagram
+            SDL.SDL_ShowSimpleMessageBox(0x0, "Create Test Diagram", "Creating new test diagram. The current diagram cannot be saved.", Window.Instance.window);
+            MainMenu.Instance.selectedDiagram = 1;
+            Toolbar.Instance.UpdateToolbar(MainMenu.Instance.selectedDiagram);
+            ElementManager.Instance.ClearElements();
+            MainMenu.Instance.isActive = !MainMenu.Instance.isActive;
+        }
+
+    }
+
     class AddElementButton : Button
     {
         public AddElementButton()

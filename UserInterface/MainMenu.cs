@@ -32,10 +32,26 @@ namespace UML_Simulator_SDL2.UserInterface
             rect.x = 6;
             rect.y = 6;
             rect.w = Window.Instance.width - 12;
-            rect.h = Window.Instance.height - 12;
+            rect.h = Window.Instance.height / 2;
 
             //Add close button
             buttonList.Add(new MainMenuButton());
+            buttonList[buttonList.Count - 1]._rect.x = xpos;
+            buttonList[buttonList.Count - 1]._rect.y = ypos;
+            buttonList[buttonList.Count - 1]._rect.w = 120;
+            buttonList[buttonList.Count - 1]._rect.h = 80;
+
+            buttonList[buttonList.Count - 1]._textBox.SetTextSurface(Window.Instance.font, buttonList[buttonList.Count - 1].text, Window.Instance.sampleColour);
+
+            buttonList[buttonList.Count - 1]._textBox.SetText(Window.Instance.renderer);
+            buttonList[buttonList.Count - 1]._textBox._rect.x = xpos + 10;
+            buttonList[buttonList.Count - 1]._textBox._rect.y = ypos + 20;
+            buttonList[buttonList.Count - 1]._textBox._rect.w = 100;
+            buttonList[buttonList.Count - 1]._textBox._rect.h = 40;
+            xpos += 130;
+
+            //Add test diagram button
+            buttonList.Add(new TestDiagramButton());
             buttonList[buttonList.Count - 1]._rect.x = xpos;
             buttonList[buttonList.Count - 1]._rect.y = ypos;
             buttonList[buttonList.Count - 1]._rect.w = 120;
@@ -82,6 +98,7 @@ namespace UML_Simulator_SDL2.UserInterface
         public SDL.SDL_Rect rect;
         public int xpos = 16, ypos = 16;
         public bool isActive = false;
+        public int selectedDiagram = 0;
         public List<Button> buttonList = new List<Button>();
     }
 }
