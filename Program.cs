@@ -67,6 +67,9 @@ namespace UML_Simulator_SDL2
 
                 SDL.SDL_RenderClear(Window.Instance.renderer);
 
+                //Draw Toolbar
+                UserInterface.Toolbar.Instance.DrawToolbar();
+                //Draw Elements
                 for (int i = 0; i < ElementManager.Instance.elementList.Count; i++)
                 {
                     SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 55, 55, 55, 255);
@@ -96,7 +99,8 @@ namespace UML_Simulator_SDL2
             Window.Instance.sampleColour.r = 0;
             Window.Instance.sampleColour.g = 0;
             Window.Instance.sampleColour.b = 0;
-            
+
+            UserInterface.Toolbar.Instance.InitToolbar();
             AppLoop();
 
             for(int i = 0; i < ElementManager.Instance.elementList.Count; i++)

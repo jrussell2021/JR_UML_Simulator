@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SDL2;
+
 namespace UML_Simulator_SDL2
 {
     internal class DiagramElement
