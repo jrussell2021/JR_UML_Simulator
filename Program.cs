@@ -20,6 +20,8 @@ namespace UML_Simulator_SDL2
                         {
                             if (UserInterface.Toolbar.Instance.CheckToolbarInteraction() == false)
                             {
+                                //Check for element interaction
+                                
                                 if (UserInterface.Toolbar.Instance.mode == 0)
                                 {
                                     ElementManager.Instance.AddElement();

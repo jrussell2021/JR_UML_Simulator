@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SDL2;
+using UML_Simulator_SDL2.UserInterface;
 
 namespace UML_Simulator_SDL2
 {
@@ -31,6 +32,16 @@ namespace UML_Simulator_SDL2
             }
 
             ElementManager.Instance.elementList.Add(this);
+
+            //Add link to element
+            for (int x = 0; x < ElementManager.Instance.elementList.Count; x++) 
+            {
+                if (ElementManager.Instance.elementList[x]._type != "link" && ElementManager.Instance.elementList[x].IsMouseInBounds() == true) 
+                {
+                    ElementManager.Instance.elementList[x].linkList.Add(this);
+                }
+
+            }
         }
     }
     
