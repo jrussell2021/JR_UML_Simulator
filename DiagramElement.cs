@@ -30,6 +30,36 @@ namespace UML_Simulator_SDL2
 
         }
 
-        public List<DiagramElement> linkList = new List<DiagramElement>();
+        public void MoveElement()
+        {
+            SDL.SDL_PollEvent(out SDL.SDL_Event e);
+            while (e.type != SDL.SDL_EventType.SDL_MOUSEBUTTONUP)
+            {
+                SDL.SDL_PollEvent(out e);
+                switch (e.type)
+                {
+                    case SDL.SDL_EventType.SDL_MOUSEBUTTONUP:
+                        int diffx, diffy;
+                        int newx, newy;
+                        SDL.SDL_GetMouseState(out newx, out newy);
+                        diffx = newx - _rect.x;
+                        diffy = newy - _rect.y;
+                        _rect.x += diffx;
+                        _rect.y += diffy;
+
+                        _textBox._rect.x += diffx;
+                        _textBox._rect.y += diffy;
+                        for(int i = 0; i < _linkEndList.Count; i++)
+                        {
+                            _linkEndList[i]._rect.w += diffx;
+                            _linkEndList[i]._rect.h += diffy;
+                        }
+                        break;
+                }
+            }
+        }
+
+        public List<DiagramElement> _linkStartList = new List<DiagramElement>();
+        public List<DiagramElement> _linkEndList = new List<DiagramElement>();
     }
 }

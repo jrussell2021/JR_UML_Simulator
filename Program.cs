@@ -21,16 +21,19 @@ namespace UML_Simulator_SDL2
                             if (UserInterface.Toolbar.Instance.CheckToolbarInteraction() == false)
                             {
                                 //Check for element interaction
+                                if(ElementManager.Instance.MoveElements() == false)
+                                {
+                                    if (UserInterface.Toolbar.Instance.mode == 0)
+                                    {
+                                        ElementManager.Instance.AddElement();
+                                    }
+                                    else if (UserInterface.Toolbar.Instance.mode == 1)
+                                    {
+                                        Link testLink = new Link();
+                                        testLink.Create();
+                                    }
+                                }
                                 
-                                if (UserInterface.Toolbar.Instance.mode == 0)
-                                {
-                                    ElementManager.Instance.AddElement();
-                                }
-                                else if (UserInterface.Toolbar.Instance.mode == 1)
-                                {
-                                    Link testLink = new Link();
-                                    testLink.Create();
-                                }
                             }
                         }
                             

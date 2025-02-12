@@ -71,6 +71,18 @@ namespace UML_Simulator_SDL2
             }
         }
 
+        public bool MoveElements()
+        {
+            for (int d = 0; d < ElementManager.Instance.elementList.Count; d++)
+            {
+                if (ElementManager.Instance.elementList[d].IsMouseInBounds() == true)
+                {
+                    ElementManager.Instance.elementList[d].MoveElement();
+                    return true;
+                }
+            }
+            return false;
+        }
         public void ClearElements()
         {
             elementList.Clear();
