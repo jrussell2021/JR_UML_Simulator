@@ -91,4 +91,18 @@ namespace UML_Simulator_SDL2.UserInterface
         }
 
     }
+
+    class MoveElementButton : Button
+    {
+        public MoveElementButton()
+        {
+            text = "Move Element";
+        }
+
+        public override void OnClick()
+        {
+            Toolbar.Instance.mode = 2;
+        }
+
+    }
 }

@@ -73,16 +73,39 @@ namespace UML_Simulator_SDL2
 
         public bool MoveElements()
         {
-            for (int d = 0; d < ElementManager.Instance.elementList.Count; d++)
+            for (int d = 0; d < elementList.Count; d++)
             {
-                if (ElementManager.Instance.elementList[d].IsMouseInBounds() == true)
+                if (elementList[d].IsMouseInBounds() == true)
                 {
-                    ElementManager.Instance.elementList[d].MoveElement();
+                    elementList[d].MoveElement();
                     return true;
                 }
             }
             return false;
         }
+
+        public void ScrollElements(int scrollValueX, int scrollValueY)
+        {
+            for (int i = 0; i < elementList.Count; i++)
+            {
+                if (elementList[i]._type == "link")
+                {
+                    elementList[i]._rect.x += scrollValueX;
+                    elementList[i]._rect.y += scrollValueY;
+                    elementList[i]._rect.w += scrollValueX;
+                    elementList[i]._rect.h += scrollValueY;
+                }
+                else
+                {
+                    elementList[i]._rect.x += scrollValueX;
+                    elementList[i]._rect.y += scrollValueY;
+                    elementList[i]._textBox._rect.x += scrollValueX;
+                    elementList[i]._textBox._rect.y += scrollValueY;
+                }
+
+            }
+        }
+
         public void ClearElements()
         {
             elementList.Clear();

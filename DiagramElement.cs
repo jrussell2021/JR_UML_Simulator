@@ -32,6 +32,10 @@ namespace UML_Simulator_SDL2
 
         public void MoveElement()
         {
+            if(_type == "link")
+            {
+                return;
+            }
             SDL.SDL_PollEvent(out SDL.SDL_Event e);
             while (e.type != SDL.SDL_EventType.SDL_MOUSEBUTTONUP)
             {
@@ -49,11 +53,20 @@ namespace UML_Simulator_SDL2
 
                         _textBox._rect.x += diffx;
                         _textBox._rect.y += diffy;
-                        for(int i = 0; i < _linkEndList.Count; i++)
+
+                        //start list
+                        for (int i = 0; i < _linkStartList.Count; i++)
+                        {
+                            _linkStartList[i]._rect.x += diffx;
+                            _linkStartList[i]._rect.y += diffy;
+                        }
+                        //end list
+                        for (int i = 0; i < _linkEndList.Count; i++)
                         {
                             _linkEndList[i]._rect.w += diffx;
                             _linkEndList[i]._rect.h += diffy;
                         }
+
                         break;
                 }
             }

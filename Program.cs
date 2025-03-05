@@ -20,25 +20,47 @@ namespace UML_Simulator_SDL2
                         {
                             if (UserInterface.Toolbar.Instance.CheckToolbarInteraction() == false)
                             {
-                                //Check for element interaction
-                                if(ElementManager.Instance.MoveElements() == false)
+                                if (UserInterface.Toolbar.Instance.mode == 0)
                                 {
-                                    if (UserInterface.Toolbar.Instance.mode == 0)
-                                    {
-                                        ElementManager.Instance.AddElement();
-                                    }
-                                    else if (UserInterface.Toolbar.Instance.mode == 1)
-                                    {
-                                        Link testLink = new Link();
-                                        testLink.Create();
-                                    }
+                                    ElementManager.Instance.AddElement();
                                 }
-                                
+                                else if (UserInterface.Toolbar.Instance.mode == 1)
+                                {
+                                    Link testLink = new Link();
+                                    testLink.Create();
+                                }
+                                else if (UserInterface.Toolbar.Instance.mode == 2)
+                                {
+                                    ElementManager.Instance.MoveElements();
+                                }
+ 
                             }
                         }
                             
                         break;
                     case SDL.SDL_EventType.SDL_MOUSEBUTTONUP:
+                        break;
+                    case SDL.SDL_EventType.SDL_KEYDOWN:
+                        if(e.key.keysym.sym == SDL.SDL_Keycode.SDLK_RIGHT)
+                        {
+                            Window.Instance.screenPosX += 4;
+                            ElementManager.Instance.ScrollElements(-4, 0);
+                        }
+                        else if(e.key.keysym.sym == SDL.SDL_Keycode.SDLK_LEFT)
+                        {
+                            Window.Instance.screenPosX -= 4;
+                            ElementManager.Instance.ScrollElements(4, 0);
+                        }
+                        else if (e.key.keysym.sym == SDL.SDL_Keycode.SDLK_UP)
+                        {
+                            Window.Instance.screenPosY -= 4;
+                            ElementManager.Instance.ScrollElements(0, 4);
+                        }
+                        else if (e.key.keysym.sym == SDL.SDL_Keycode.SDLK_DOWN)
+                        {
+                            Window.Instance.screenPosY += 4;
+                            ElementManager.Instance.ScrollElements(0, -4);
+                        }
                         break;
                 }
             }

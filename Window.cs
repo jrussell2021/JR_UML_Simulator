@@ -50,6 +50,7 @@ namespace UML_Simulator_SDL2
         public IntPtr window;
         public bool running = true;
         public int width = 1280, height = 720;
+        public int screenPosX = 0, screenPosY = 0;
         public IntPtr font;
 
         public SDL.SDL_Color sampleColour;

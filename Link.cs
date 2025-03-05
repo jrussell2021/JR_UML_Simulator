@@ -17,6 +17,16 @@ namespace UML_Simulator_SDL2
         }
         public void Create()
         {
+            //Add start link to element
+            for (int x = 0; x < ElementManager.Instance.elementList.Count; x++)
+            {
+                if (ElementManager.Instance.elementList[x]._type != "link" && ElementManager.Instance.elementList[x].IsMouseInBounds() == true)
+                {
+                    ElementManager.Instance.elementList[x]._linkStartList.Add(this);
+                }
+
+            }
+
             SDL.SDL_GetMouseState(out _rect.x, out _rect.y);
 
             SDL.SDL_PollEvent(out SDL.SDL_Event e);
@@ -33,7 +43,7 @@ namespace UML_Simulator_SDL2
 
             ElementManager.Instance.elementList.Add(this);
 
-            //Add link to element
+            //Add end link to element
             for (int x = 0; x < ElementManager.Instance.elementList.Count; x++) 
             {
                 if (ElementManager.Instance.elementList[x]._type != "link" && ElementManager.Instance.elementList[x].IsMouseInBounds() == true) 
