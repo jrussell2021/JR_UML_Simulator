@@ -40,7 +40,7 @@ namespace UML_Simulator_SDL2
             elementList[elementList.Count - 1]._rect.h = 80;
 
             //Text
-            string temp = "Element " + (elementList.Count - 1);
+            string temp = "Element";
             elementList[elementList.Count - 1]._textBox.SetTextSurface(Window.Instance.font, temp, Window.Instance.sampleColour);
             
             elementList[elementList.Count - 1]._textBox.SetText(Window.Instance.renderer);

@@ -21,7 +21,7 @@ namespace UML_Simulator_SDL2
             _rect.h = 80;
 
             //Text
-            string temp = "Element " + (ElementManager.Instance.elementList.Count - 1);
+            string temp = "Start/End";
             _textBox.SetTextSurface(Window.Instance.font, temp, Window.Instance.sampleColour);
 
             _textBox.SetText(Window.Instance.renderer);

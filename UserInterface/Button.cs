@@ -49,13 +49,13 @@ namespace UML_Simulator_SDL2.UserInterface
     {
         public TestDiagramButton()
         {
-            text = "Test Diagram";
+            text = "Activity Diagram";
         }
 
         public override void OnClick()
         {
             //Start new test diagram
-            SDL.SDL_ShowSimpleMessageBox(0x0, "Create Test Diagram", "Creating new test diagram. The current diagram cannot be saved.", Window.Instance.window);
+            SDL.SDL_ShowSimpleMessageBox(0x0, "Create Activity Diagram", "Creating new activity diagram. The current diagram cannot be saved.", Window.Instance.window);
             MainMenu.Instance.selectedDiagram = 1;
             Toolbar.Instance.UpdateToolbar(MainMenu.Instance.selectedDiagram);
             ElementManager.Instance.ClearElements();
