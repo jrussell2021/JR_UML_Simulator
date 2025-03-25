@@ -68,7 +68,7 @@ namespace UML_Simulator_SDL2.UserInterface
     {
         public AddElementButton()
         {
-            text = "Add Element";
+            text = "Add Action";
         }
 
         public override void OnClick()
@@ -124,7 +124,7 @@ namespace UML_Simulator_SDL2.UserInterface
     {
         public AddCircleButton()
         {
-            text = "Add Start/End Point";
+            text = "Add Start/End";
         }
 
         public override void OnClick()
@@ -138,12 +138,26 @@ namespace UML_Simulator_SDL2.UserInterface
     {
         public AddDecisionButton()
         {
-            text = "Add Decision Element";
+            text = "Add Decision";
         }
 
         public override void OnClick()
         {
             Toolbar.Instance.mode = 5;
+        }
+
+    }
+
+    class AddForkButton : Button
+    {
+        public AddForkButton()
+        {
+            text = "Add Fork";
+        }
+
+        public override void OnClick()
+        {
+            Toolbar.Instance.mode = 6;
         }
 
     }

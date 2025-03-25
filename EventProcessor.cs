@@ -100,6 +100,11 @@ namespace UML_Simulator_SDL2
                                     DecisionElement decElement = new DecisionElement();
                                     decElement.Create();
                                 }
+                                else if (UserInterface.Toolbar.Instance.mode == 6)
+                                {
+                                    ForkElement forkElement = new ForkElement();
+                                    forkElement.Create();
+                                }
 
                             }
                         }

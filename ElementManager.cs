@@ -40,7 +40,7 @@ namespace UML_Simulator_SDL2
             elementList[elementList.Count - 1]._rect.h = 80;
 
             //Text
-            string temp = "Element";
+            string temp = "Action";
             elementList[elementList.Count - 1]._textBox.SetTextSurface(Window.Instance.font, temp, Window.Instance.sampleColour);
             
             elementList[elementList.Count - 1]._textBox.SetText(Window.Instance.renderer);
@@ -129,6 +129,14 @@ namespace UML_Simulator_SDL2
                 {
                     DrawDiagonalSquare(elementList[i]._rect);
                     SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 255, 255, 255, 255);
+                    elementList[i]._textBox.DrawText(Window.Instance.renderer);
+                }
+                else if (elementList[i]._type == "fork")
+                {
+                    SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 0, 0, 0, 255);
+                    SDL.SDL_RenderFillRect(Window.Instance.renderer, ref elementList[i]._rect);
+                    SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 55, 55, 55, 255);
+                    SDL.SDL_RenderDrawRect(Window.Instance.renderer, ref elementList[i]._rect);
                     elementList[i]._textBox.DrawText(Window.Instance.renderer);
                 }
                 else
