@@ -175,6 +175,13 @@ namespace UML_Simulator_SDL2
                     elementList[i]._textBox._rect.y += scrollValueY;
                 }
 
+                //Nodes
+                for (int p = 0; p < elementList[i]._nodeList.Count; p++)
+                {
+                    elementList[i]._nodeList[p].x += scrollValueX;
+                    elementList[i]._nodeList[p].y += scrollValueY;
+                }
+
             }
         }
 

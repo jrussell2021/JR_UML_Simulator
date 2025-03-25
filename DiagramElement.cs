@@ -66,7 +66,12 @@ namespace UML_Simulator_SDL2
                             _linkEndList[i]._rect.w += diffx;
                             _linkEndList[i]._rect.h += diffy;
                         }
-
+                        //Nodes
+                        for(int i = 0; i < _nodeList.Count; i++)
+                        {
+                            _nodeList[i].x += diffx;
+                            _nodeList[i].y += diffy;
+                        }
                         break;
                 }
             }
@@ -90,13 +95,21 @@ namespace UML_Simulator_SDL2
             _nodeList.Add(new Node(_rect.x + (_rect.w / 2), _rect.y + _rect.h));
 
             //Middle Left
-            _nodeList.Add(new Node(_rect.x, _rect.y + (_rect.y / 2)));
+            _nodeList.Add(new Node(_rect.x, _rect.y + (_rect.h / 2)));
 
             //Middle Right
-            _nodeList.Add(new Node(_rect.x + _rect.w, _rect.y + (_rect.y / 2)));
+            _nodeList.Add(new Node(_rect.x + _rect.w, _rect.y + (_rect.h / 2)));
 
         }
 
+        public void MoveNodes(int shiftX, int shiftY)
+        {
+            for(int i = 0; i < _nodeList.Count; i++)
+            {
+                _nodeList[i].x += shiftX;
+                _nodeList[i].y += shiftY;
+            }
+        }
         public List<DiagramElement> _linkStartList = new List<DiagramElement>();
         public List<DiagramElement> _linkEndList = new List<DiagramElement>();
         public List<Node> _nodeList = new List<Node>();

@@ -15,6 +15,6 @@ namespace UML_Simulator_SDL2
 
         public int x, y;
 
-        public int distance;
+        public double distance;
     }
 }

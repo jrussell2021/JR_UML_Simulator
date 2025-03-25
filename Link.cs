@@ -19,11 +19,70 @@ namespace UML_Simulator_SDL2
         
         public void ClampStart(DiagramElement targetElement)
         {
-            double relX = _rect.x, relY = _rect.y;
+            Node shortestNode = targetElement._nodeList[0];
+            double diffx, diffy;
+            double sqrDistance, actDistance;
+            
+            //
+            for(int i = 0; i < targetElement._nodeList.Count; i++)
+            {
+                //Calc diff
+                diffx = targetElement._nodeList[i].x - _rect.x;
+                diffy = targetElement._nodeList[i].y - _rect.y;
+                sqrDistance = (diffx * diffx) + (diffy * diffy);
+                actDistance = Math.Sqrt(sqrDistance);
 
-            _rect.x = targetElement._nodeList[0].x;
-            _rect.y = targetElement._nodeList[0].y;
+                //Turn negative values into positive values.
+                actDistance = actDistance * actDistance;
+                actDistance = Math.Sqrt(actDistance);
+
+                //Set node distance
+                targetElement._nodeList[i].distance = actDistance;
+
+                //Set shortest node
+                if(actDistance < shortestNode.distance)
+                {
+                    shortestNode = targetElement._nodeList[i];
+                }
+            }
+
+            _rect.x = shortestNode.x;
+            _rect.y = shortestNode.y;
         }
+
+        public void ClampEnd(DiagramElement targetElement)
+        {
+            Node shortestNode = targetElement._nodeList[0];
+            double diffx, diffy;
+            double sqrDistance, actDistance;
+
+            //
+            for (int i = 0; i < targetElement._nodeList.Count; i++)
+            {
+                //Calc diff
+                diffx = targetElement._nodeList[i].x - _rect.w;
+                diffy = targetElement._nodeList[i].y - _rect.h;
+                sqrDistance = (diffx * diffx) + (diffy * diffy);
+                actDistance = Math.Sqrt(sqrDistance);
+
+                //Turn negative values into positive values.
+                actDistance = actDistance * actDistance;
+                actDistance = Math.Sqrt(actDistance);
+
+                //Set node distance
+                targetElement._nodeList[i].distance = actDistance;
+
+                //Set shortest node
+                if (actDistance < shortestNode.distance)
+                {
+                    shortestNode = targetElement._nodeList[i];
+                }
+            }
+
+            _rect.w = shortestNode.x;
+            _rect.h = shortestNode.y;
+        }
+
         public void Create()
         {
             SDL.SDL_GetMouseState(out _rect.x, out _rect.y);
@@ -33,7 +92,7 @@ namespace UML_Simulator_SDL2
                 if (ElementManager.Instance.elementList[x]._type != "link" && ElementManager.Instance.elementList[x].IsMouseInBounds() == true)
                 {
                     ElementManager.Instance.elementList[x]._linkStartList.Add(this);
-                    // Remember to update node positions when you move elements//ClampStart(ElementManager.Instance.elementList[x]);
+                    ClampStart(ElementManager.Instance.elementList[x]);
                 }
 
             }
@@ -58,6 +117,7 @@ namespace UML_Simulator_SDL2
                 if (ElementManager.Instance.elementList[x]._type != "link" && ElementManager.Instance.elementList[x].IsMouseInBounds() == true) 
                 {
                     ElementManager.Instance.elementList[x]._linkEndList.Add(this);
+                    ClampEnd(ElementManager.Instance.elementList[x]);
                 }
 
             }
