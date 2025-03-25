@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using SDL2;
 
 namespace UML_Simulator_SDL2
@@ -27,6 +28,37 @@ namespace UML_Simulator_SDL2
             }
         }
 
+        public string GetInput()
+        {
+            IntPtr myPointer;
+            bool isDone = false;
+            string text = "";
+            int value;
+            Console.WriteLine("Input test");
+            
+            while (!isDone)
+            {
+                if(SDL.SDL_PollEvent(out SDL.SDL_Event e) > 0)
+                {
+                    switch (e.type)
+                    {
+                        case SDL.SDL_EventType.SDL_MOUSEBUTTONDOWN:
+                            isDone = true;
+                            break;
+                        case SDL.SDL_EventType.SDL_TEXTINPUT:
+                            unsafe
+                            {
+                                myPointer = (IntPtr)e.text.text;
+                                value = Marshal.ReadByte(myPointer);
+                                text += (char)value;
+                            }
+                            break;
+                    }
+                }
+            }
+
+            return text;
+        }
         public void PollEvents()
         {
             while (SDL.SDL_PollEvent(out SDL.SDL_Event e) == 1)
@@ -53,6 +85,11 @@ namespace UML_Simulator_SDL2
                                 else if (UserInterface.Toolbar.Instance.mode == 2)
                                 {
                                     ElementManager.Instance.MoveElements();
+                                }
+                                else if (UserInterface.Toolbar.Instance.mode == 3)
+                                {
+                                    ElementManager.Instance.EditTextBox();
+                                    
                                 }
 
                             }

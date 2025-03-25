@@ -106,9 +106,26 @@ namespace UML_Simulator_SDL2
             }
         }
 
-        
+        public void EditTextBox()
+        {
+            for(int i = 0; i < elementList.Count; i++)
+            {
+                if (elementList[i]._textBox.IsMouseInBounds())
+                {
+                    string updatedText = EventProcessor.Instance.GetInput();
+                    elementList[i]._textBox.SetTextSurface(Window.Instance.font, updatedText, Window.Instance.sampleColour);
+                    elementList[i]._textBox.SetText(Window.Instance.renderer);
+                }
+            }
+        }
+
         public void ClearElements()
         {
+            for(int x = 0; x < elementList.Count; x++)
+            {
+                elementList[x]._textBox.DestroyTextBox();
+                
+            }
             elementList.Clear();
         }
         public List<DiagramElement> elementList = new List<DiagramElement>();

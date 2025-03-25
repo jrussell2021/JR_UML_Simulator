@@ -105,4 +105,18 @@ namespace UML_Simulator_SDL2.UserInterface
         }
 
     }
+
+    class EditTextButton : Button
+    {
+        public EditTextButton()
+        {
+            text = "Edit Text";
+        }
+
+        public override void OnClick()
+        {
+            Toolbar.Instance.mode = 3;
+        }
+
+    }
 }
