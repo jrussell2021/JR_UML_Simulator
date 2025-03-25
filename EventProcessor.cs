@@ -95,6 +95,11 @@ namespace UML_Simulator_SDL2
                                     StartElement startElement = new StartElement();
                                     startElement.Create();
                                 }
+                                else if (UserInterface.Toolbar.Instance.mode == 5)
+                                {
+                                    DecisionElement decElement = new DecisionElement();
+                                    decElement.Create();
+                                }
 
                             }
                         }

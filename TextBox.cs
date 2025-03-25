@@ -27,8 +27,8 @@ namespace UML_Simulator_SDL2
 
         public void DestroyTextBox()
         {
-            SDL.SDL_FreeSurface(textSurface);
-            SDL.SDL_DestroyTexture(text);
+            //SDL.SDL_FreeSurface(textSurface);
+            //SDL.SDL_DestroyTexture(text);
         }
 
         public bool IsMouseInBounds()

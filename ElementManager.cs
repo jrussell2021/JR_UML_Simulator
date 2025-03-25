@@ -52,6 +52,25 @@ namespace UML_Simulator_SDL2
             elementList[elementList.Count - 1].CreateNodes();
         }
 
+        public void DrawDiagonalSquare(SDL.SDL_Rect rect)
+        {
+            Node tempNode;
+            Node[] points = new Node[4];
+            //top
+            points[0] = new Node(rect.x + (rect.w / 2), rect.y);
+            //right
+            points[1] = new Node(rect.x + rect.w, rect.y + (rect.h / 2));
+            //bottom
+            points[2] = new Node(rect.x + (rect.w / 2), rect.y + rect.h);
+            //left
+            points[3] = new Node(rect.x, rect.y + (rect.h / 2));
+
+            SDL.SDL_RenderDrawLine(Window.Instance.renderer, points[0].x, points[0].y, points[1].x, points[1].y);
+            SDL.SDL_RenderDrawLine(Window.Instance.renderer, points[1].x, points[1].y, points[2].x, points[2].y);
+            SDL.SDL_RenderDrawLine(Window.Instance.renderer, points[2].x, points[2].y, points[3].x, points[3].y);
+            SDL.SDL_RenderDrawLine(Window.Instance.renderer, points[3].x, points[3].y, points[0].x, points[0].y);
+        }
+
         public void DrawCircle(int circleX, int circleY, int radius)
         {
             int diameter = radius * 2;
@@ -103,6 +122,12 @@ namespace UML_Simulator_SDL2
                 else if (elementList[i]._type == "start")
                 {
                     DrawCircle(elementList[i]._rect.x + (elementList[i]._rect.w / 2), elementList[i]._rect.y + (elementList[i]._rect.h / 2), elementList[i]._rect.h / 2);
+                    SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 255, 255, 255, 255);
+                    elementList[i]._textBox.DrawText(Window.Instance.renderer);
+                }
+                else if (elementList[i]._type == "dec")
+                {
+                    DrawDiagonalSquare(elementList[i]._rect);
                     SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 255, 255, 255, 255);
                     elementList[i]._textBox.DrawText(Window.Instance.renderer);
                 }

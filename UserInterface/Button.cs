@@ -133,4 +133,18 @@ namespace UML_Simulator_SDL2.UserInterface
         }
 
     }
+
+    class AddDecisionButton : Button
+    {
+        public AddDecisionButton()
+        {
+            text = "Add Decision Element";
+        }
+
+        public override void OnClick()
+        {
+            Toolbar.Instance.mode = 5;
+        }
+
+    }
 }
