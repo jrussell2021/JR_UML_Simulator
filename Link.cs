@@ -11,23 +11,32 @@ namespace UML_Simulator_SDL2
     internal class Link : DiagramElement
     {
         int startx, starty, endx, endy;
+
         public Link()
         {
             _type = "link";
         }
+        
+        public void ClampStart(DiagramElement targetElement)
+        {
+            double relX = _rect.x, relY = _rect.y;
+
+            _rect.x = targetElement._nodeList[0].x;
+            _rect.y = targetElement._nodeList[0].y;
+        }
         public void Create()
         {
+            SDL.SDL_GetMouseState(out _rect.x, out _rect.y);
             //Add start link to element
             for (int x = 0; x < ElementManager.Instance.elementList.Count; x++)
             {
                 if (ElementManager.Instance.elementList[x]._type != "link" && ElementManager.Instance.elementList[x].IsMouseInBounds() == true)
                 {
                     ElementManager.Instance.elementList[x]._linkStartList.Add(this);
+                    ClampStart(ElementManager.Instance.elementList[x]);
                 }
 
             }
-
-            SDL.SDL_GetMouseState(out _rect.x, out _rect.y);
 
             SDL.SDL_PollEvent(out SDL.SDL_Event e);
             while (e.type != SDL.SDL_EventType.SDL_MOUSEBUTTONUP)

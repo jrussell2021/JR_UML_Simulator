@@ -27,6 +27,7 @@ namespace UML_Simulator_SDL2
             }
         }
 
+        
         public void AddElement()
         {
             int x, y = 0;
@@ -47,7 +48,45 @@ namespace UML_Simulator_SDL2
             elementList[elementList.Count - 1]._textBox._rect.y = y + 20;
             elementList[elementList.Count - 1]._textBox._rect.w = 100;
             elementList[elementList.Count - 1]._textBox._rect.h = 40;
-            
+
+            elementList[elementList.Count - 1].CreateNodes();
+        }
+
+        public void DrawCircle(int centreX, int centreY, int radius)
+        {
+            int diameter = (radius * 2);
+
+            int x = (radius - 1);
+            int y = 0;
+            int tx = 1;
+            int ty = 1;
+            int error = (tx - diameter);
+
+            while (x >= y)
+            {
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, centreX + x, centreY - y);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, centreX + x, centreY + y);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, centreX - x, centreY - y);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, centreX - x, centreY + y);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, centreX + y, centreY - x);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, centreX + y, centreY + x);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, centreX - y, centreY - x);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, centreX - y, centreY + x);
+
+                if (error <= 0)
+                {
+                    ++y;
+                    error += ty;
+                    ty += 2;
+                }
+
+                if (error > 0)
+                {
+                    --x;
+                    tx += 2;
+                    error += (tx - diameter);
+                }
+            }
         }
 
         public void DrawElements()
@@ -58,6 +97,15 @@ namespace UML_Simulator_SDL2
                 if (elementList[i]._type == "link")
                 {
                     SDL.SDL_RenderDrawLine(Window.Instance.renderer, elementList[i]._rect.x, elementList[i]._rect.y, elementList[i]._rect.w, elementList[i]._rect.h);
+                }
+                else if (elementList[i]._type == "start")
+                {
+                    DrawCircle(elementList[i]._rect.x + (elementList[i]._rect.w / 2), elementList[i]._rect.y + (elementList[i]._rect.h / 2), elementList[i]._rect.h / 2);
+                    //SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 255, 255, 255, 255);
+                    //SDL.SDL_RenderFillRect(Window.Instance.renderer, ref elementList[i]._rect);
+                    //SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 55, 55, 55, 255);
+                    //SDL.SDL_RenderDrawRect(Window.Instance.renderer, ref elementList[i]._rect);
+                    elementList[i]._textBox.DrawText(Window.Instance.renderer);
                 }
                 else
                 {

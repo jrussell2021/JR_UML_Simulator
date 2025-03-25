@@ -72,7 +72,33 @@ namespace UML_Simulator_SDL2
             }
         }
 
+        public void CreateNodes()
+        {
+            //Top Left
+            _nodeList.Add(new Node(_rect.x, _rect.y));
+            //Top Right
+            _nodeList.Add(new Node(_rect.x + _rect.w, _rect.y));
+            //Bottom Left
+            _nodeList.Add(new Node(_rect.x, _rect.y + _rect.h));
+            //Bottom Right
+            _nodeList.Add(new Node(_rect.x + _rect.w, _rect.y + _rect.h));
+
+            //Middle Top
+            _nodeList.Add(new Node(_rect.x + (_rect.w / 2), _rect.y));
+
+            //Middle Bottom
+            _nodeList.Add(new Node(_rect.x + (_rect.w / 2), _rect.y + _rect.h));
+
+            //Middle Left
+            _nodeList.Add(new Node(_rect.x, _rect.y + (_rect.y / 2)));
+
+            //Middle Right
+            _nodeList.Add(new Node(_rect.x + _rect.w, _rect.y + (_rect.y / 2)));
+
+        }
+
         public List<DiagramElement> _linkStartList = new List<DiagramElement>();
         public List<DiagramElement> _linkEndList = new List<DiagramElement>();
+        public List<Node> _nodeList = new List<Node>();
     }
 }

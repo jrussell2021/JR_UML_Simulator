@@ -119,4 +119,18 @@ namespace UML_Simulator_SDL2.UserInterface
         }
 
     }
+
+    class AddCircleButton : Button
+    {
+        public AddCircleButton()
+        {
+            text = "Add Start/End Point";
+        }
+
+        public override void OnClick()
+        {
+            Toolbar.Instance.mode = 4;
+        }
+
+    }
 }

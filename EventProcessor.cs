@@ -89,7 +89,11 @@ namespace UML_Simulator_SDL2
                                 else if (UserInterface.Toolbar.Instance.mode == 3)
                                 {
                                     ElementManager.Instance.EditTextBox();
-                                    
+                                }
+                                else if (UserInterface.Toolbar.Instance.mode == 4)
+                                {
+                                    StartElement startElement = new StartElement();
+                                    startElement.Create();
                                 }
 
                             }
