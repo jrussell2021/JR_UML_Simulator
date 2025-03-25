@@ -52,27 +52,28 @@ namespace UML_Simulator_SDL2
             elementList[elementList.Count - 1].CreateNodes();
         }
 
-        public void DrawCircle(int centreX, int centreY, int radius)
+        public void DrawCircle(int circleX, int circleY, int radius)
         {
-            int diameter = (radius * 2);
+            int diameter = radius * 2;
 
-            int x = (radius - 1);
+            int x = radius - 1;
             int y = 0;
             int tx = 1;
             int ty = 1;
-            int error = (tx - diameter);
+            int error = tx - diameter;
 
             while (x >= y)
             {
-                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, centreX + x, centreY - y);
-                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, centreX + x, centreY + y);
-                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, centreX - x, centreY - y);
-                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, centreX - x, centreY + y);
-                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, centreX + y, centreY - x);
-                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, centreX + y, centreY + x);
-                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, centreX - y, centreY - x);
-                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, centreX - y, centreY + x);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, circleX + x, circleY - y);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, circleX + x, circleY + y);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, circleX - x, circleY - y);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, circleX - x, circleY + y);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, circleX + y, circleY - x);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, circleX + y, circleY + x);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, circleX - y, circleY - x);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, circleX - y, circleY + x);
 
+                
                 if (error <= 0)
                 {
                     ++y;
@@ -86,6 +87,7 @@ namespace UML_Simulator_SDL2
                     tx += 2;
                     error += (tx - diameter);
                 }
+                
             }
         }
 
@@ -101,10 +103,7 @@ namespace UML_Simulator_SDL2
                 else if (elementList[i]._type == "start")
                 {
                     DrawCircle(elementList[i]._rect.x + (elementList[i]._rect.w / 2), elementList[i]._rect.y + (elementList[i]._rect.h / 2), elementList[i]._rect.h / 2);
-                    //SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 255, 255, 255, 255);
-                    //SDL.SDL_RenderFillRect(Window.Instance.renderer, ref elementList[i]._rect);
-                    //SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 55, 55, 55, 255);
-                    //SDL.SDL_RenderDrawRect(Window.Instance.renderer, ref elementList[i]._rect);
+                    SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 255, 255, 255, 255);
                     elementList[i]._textBox.DrawText(Window.Instance.renderer);
                 }
                 else

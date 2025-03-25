@@ -33,7 +33,7 @@ namespace UML_Simulator_SDL2
                 if (ElementManager.Instance.elementList[x]._type != "link" && ElementManager.Instance.elementList[x].IsMouseInBounds() == true)
                 {
                     ElementManager.Instance.elementList[x]._linkStartList.Add(this);
-                    ClampStart(ElementManager.Instance.elementList[x]);
+                    // Remember to update node positions when you move elements//ClampStart(ElementManager.Instance.elementList[x]);
                 }
 
             }

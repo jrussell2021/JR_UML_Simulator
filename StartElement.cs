@@ -26,7 +26,7 @@ namespace UML_Simulator_SDL2
             _textBox.SetTextSurface(Window.Instance.font, temp, Window.Instance.sampleColour);
 
             _textBox.SetText(Window.Instance.renderer);
-            _textBox._rect.x = x + 10;
+            _textBox._rect.x = x - 10;
             _textBox._rect.y = y + 20;
             _textBox._rect.w = 100;
             _textBox._rect.h = 40;
