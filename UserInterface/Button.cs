@@ -194,4 +194,17 @@ namespace UML_Simulator_SDL2.UserInterface
         }
 
     }
+    class AddUseCaseButton : Button
+    {
+        public AddUseCaseButton()
+        {
+            text = "Add Use Case";
+        }
+
+        public override void OnClick()
+        {
+            Toolbar.Instance.mode = 8;
+        }
+
+    }
 }

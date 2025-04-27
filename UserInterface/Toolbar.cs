@@ -108,6 +108,10 @@ namespace UML_Simulator_SDL2.UserInterface
                 buttonList.Add(new AddActorButton());
                 SetButton();
 
+                //Add use case button
+                buttonList.Add(new AddUseCaseButton());
+                SetButton();
+
                 //Add line button
                 buttonList.Add(new AddLineButton());
                 SetButton();

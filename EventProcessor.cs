@@ -110,6 +110,11 @@ namespace UML_Simulator_SDL2
                                     ActorElement actorElement = new ActorElement();
                                     actorElement.Create();
                                 }
+                                else if (UserInterface.Toolbar.Instance.mode == 8)
+                                {
+                                    UseCaseElement usecaseElement = new UseCaseElement();
+                                    usecaseElement.Create();
+                                }
 
                             }
                         }

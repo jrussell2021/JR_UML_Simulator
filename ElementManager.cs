@@ -109,6 +109,45 @@ namespace UML_Simulator_SDL2
                 
             }
         }
+        public void DrawOval(int circleX, int circleY, int radius)
+        {
+            int diameter = radius * 2;
+
+            int x = radius - 1;
+            int y = 0;
+            int tx = 1;
+            int ty = 1;
+            int error = tx - diameter;
+
+            while (x >= y)
+            {
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, circleX + x * 2, circleY - y);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, circleX + x * 2, circleY + y);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, circleX - x * 2, circleY - y);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, circleX - x * 2, circleY + y);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, circleX + y * 2, circleY - x);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, circleX + y * 2, circleY + x);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, circleX - y * 2, circleY - x);
+                SDL.SDL_RenderDrawPoint(Window.Instance.renderer, circleX - y * 2, circleY + x);
+
+
+                if (error <= 0)
+                {
+                    ++y;
+                    error += ty;
+                    ty += 2;
+                }
+
+                if (error > 0)
+                {
+                    --x;
+                    tx += 2;
+                    error += (tx - diameter);
+                    
+                }
+
+            }
+        }
 
         public void DrawElements()
         {
@@ -143,7 +182,15 @@ namespace UML_Simulator_SDL2
                 {
                     DrawActor(elementList[i]._rect);
                     SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 55, 55, 55, 255);
-                    SDL.SDL_RenderDrawRect(Window.Instance.renderer, ref elementList[i]._rect);
+                    //SDL.SDL_RenderDrawRect(Window.Instance.renderer, ref elementList[i]._rect);
+                    elementList[i]._textBox.DrawText(Window.Instance.renderer);
+                }
+
+                else if (elementList[i]._type == "usecase")
+                {
+                    DrawOval(elementList[i]._rect.x + (elementList[i]._rect.w / 2), elementList[i]._rect.y + (elementList[i]._rect.h / 2), elementList[i]._rect.h / 2);
+                    SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 55, 55, 55, 255);
+                    //SDL.SDL_RenderDrawRect(Window.Instance.renderer, ref elementList[i]._rect);
                     elementList[i]._textBox.DrawText(Window.Instance.renderer);
                 }
                 else
