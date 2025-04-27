@@ -105,6 +105,11 @@ namespace UML_Simulator_SDL2
                                     ForkElement forkElement = new ForkElement();
                                     forkElement.Create();
                                 }
+                                else if (UserInterface.Toolbar.Instance.mode == 7)
+                                {
+                                    ActorElement actorElement = new ActorElement();
+                                    actorElement.Create();
+                                }
 
                             }
                         }

@@ -64,6 +64,25 @@ namespace UML_Simulator_SDL2.UserInterface
 
     }
 
+    class UseCaseDiagramButton : Button
+    {
+        public UseCaseDiagramButton()
+        {
+            text = "Use Case Diagram";
+        }
+
+        public override void OnClick()
+        {
+            //Start new test diagram
+            SDL.SDL_ShowSimpleMessageBox(0x0, "Create Use Case Diagram", "Creating new use case diagram. The current diagram cannot be saved.", Window.Instance.window);
+            MainMenu.Instance.selectedDiagram = 2;
+            Toolbar.Instance.UpdateToolbar(MainMenu.Instance.selectedDiagram);
+            ElementManager.Instance.ClearElements();
+            MainMenu.Instance.isActive = !MainMenu.Instance.isActive;
+        }
+
+    }
+
     class AddElementButton : Button
     {
         public AddElementButton()
@@ -158,6 +177,20 @@ namespace UML_Simulator_SDL2.UserInterface
         public override void OnClick()
         {
             Toolbar.Instance.mode = 6;
+        }
+
+    }
+
+    class AddActorButton : Button
+    {
+        public AddActorButton()
+        {
+            text = "Add Actor";
+        }
+
+        public override void OnClick()
+        {
+            Toolbar.Instance.mode = 7;
         }
 
     }

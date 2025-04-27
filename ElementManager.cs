@@ -139,6 +139,13 @@ namespace UML_Simulator_SDL2
                     SDL.SDL_RenderDrawRect(Window.Instance.renderer, ref elementList[i]._rect);
                     elementList[i]._textBox.DrawText(Window.Instance.renderer);
                 }
+                else if (elementList[i]._type == "actor")
+                {
+                    DrawActor(elementList[i]._rect);
+                    SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 55, 55, 55, 255);
+                    SDL.SDL_RenderDrawRect(Window.Instance.renderer, ref elementList[i]._rect);
+                    elementList[i]._textBox.DrawText(Window.Instance.renderer);
+                }
                 else
                 {
                     SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 255, 255, 255, 255);
@@ -149,6 +156,15 @@ namespace UML_Simulator_SDL2
                 }
 
             }
+        }
+
+        private void DrawActor(SDL.SDL_Rect rect)
+        {
+            DrawCircle(rect.x + (rect.w / 2), rect.y + (rect.w / 4), rect.w / 4);
+            SDL.SDL_RenderDrawLine(Window.Instance.renderer, rect.x + (rect.w / 2), rect.y + (rect.w / 2), rect.x + (rect.w / 2), rect.y + (rect.w / 2) + 45);
+            SDL.SDL_RenderDrawLine(Window.Instance.renderer, rect.x + (rect.w / 2), rect.y + (rect.w / 2) + 45, rect.x + rect.w /4 * 3, rect.y + (rect.w / 2) + 79);
+            SDL.SDL_RenderDrawLine(Window.Instance.renderer, rect.x + (rect.w / 2), rect.y + (rect.w / 2) + 45, rect.x + rect.w / 4, rect.y + (rect.w / 2) + 79);
+            SDL.SDL_RenderDrawLine(Window.Instance.renderer, rect.x + (rect.w / 4), rect.y + (rect.h / 2), rect.x + rect.w / 4 * 3, rect.y + (rect.h / 2));
         }
 
         public bool MoveElements()
