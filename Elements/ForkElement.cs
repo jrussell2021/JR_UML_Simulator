@@ -5,28 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 using SDL2;
 
-namespace UML_Simulator_SDL2
+namespace UML_Simulator_SDL2.Elements
 {
-    internal class StartElement : DiagramElement
+    internal class ForkElement : DecisionElement
     {
         public void Create()
         {
             int x, y;
             SDL.SDL_GetMouseState(out x, out y);
-            _type = "start";
+            _type = "fork";
 
             _rect.x = x;
             _rect.y = y;
-            _rect.w = 80;
-            _rect.h = 80;
+            _rect.w = 320;
+            _rect.h = 20;
 
             //Text
-            string temp = "Start/End";
+            string temp = "    Fork    ";
             _textBox.SetTextSurface(Window.Instance.font, temp, Window.Instance.sampleColour);
 
             _textBox.SetText(Window.Instance.renderer);
-            _textBox._rect.x = x - 10;
-            _textBox._rect.y = y + 20;
+            _textBox._rect.x = x + 110;
+            _textBox._rect.y = y + 10;
             _textBox._rect.w = 100;
             _textBox._rect.h = 40;
 

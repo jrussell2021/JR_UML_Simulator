@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SDL2;
 
-namespace UML_Simulator_SDL2
+namespace UML_Simulator_SDL2.Elements
 {
     internal class DiagramElement
     {
@@ -19,7 +19,7 @@ namespace UML_Simulator_SDL2
             int x, y = 0;
             SDL.SDL_GetMouseState(out x, out y);
 
-            if (x >= _rect.x && y >= _rect.y && x <= (_rect.x + _rect.w) && y <= (_rect.y + _rect.h))
+            if (x >= _rect.x && y >= _rect.y && x <= _rect.x + _rect.w && y <= _rect.y + _rect.h)
             {
                 return true;
             }
@@ -32,7 +32,7 @@ namespace UML_Simulator_SDL2
 
         public void MoveElement()
         {
-            if(_type == "link")
+            if (_type == "link")
             {
                 return;
             }
@@ -67,7 +67,7 @@ namespace UML_Simulator_SDL2
                             _linkEndList[i]._rect.h += diffy;
                         }
                         //Nodes
-                        for(int i = 0; i < _nodeList.Count; i++)
+                        for (int i = 0; i < _nodeList.Count; i++)
                         {
                             _nodeList[i].x += diffx;
                             _nodeList[i].y += diffy;
@@ -89,22 +89,22 @@ namespace UML_Simulator_SDL2
             _nodeList.Add(new Node(_rect.x + _rect.w, _rect.y + _rect.h));
 
             //Middle Top
-            _nodeList.Add(new Node(_rect.x + (_rect.w / 2), _rect.y));
+            _nodeList.Add(new Node(_rect.x + _rect.w / 2, _rect.y));
 
             //Middle Bottom
-            _nodeList.Add(new Node(_rect.x + (_rect.w / 2), _rect.y + _rect.h));
+            _nodeList.Add(new Node(_rect.x + _rect.w / 2, _rect.y + _rect.h));
 
             //Middle Left
-            _nodeList.Add(new Node(_rect.x, _rect.y + (_rect.h / 2)));
+            _nodeList.Add(new Node(_rect.x, _rect.y + _rect.h / 2));
 
             //Middle Right
-            _nodeList.Add(new Node(_rect.x + _rect.w, _rect.y + (_rect.h / 2)));
+            _nodeList.Add(new Node(_rect.x + _rect.w, _rect.y + _rect.h / 2));
 
         }
 
         public void MoveNodes(int shiftX, int shiftY)
         {
-            for(int i = 0; i < _nodeList.Count; i++)
+            for (int i = 0; i < _nodeList.Count; i++)
             {
                 _nodeList[i].x += shiftX;
                 _nodeList[i].y += shiftY;

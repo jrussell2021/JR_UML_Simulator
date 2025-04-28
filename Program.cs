@@ -22,6 +22,9 @@ namespace UML_Simulator_SDL2
                 //Draw Toolbar
                 UserInterface.Toolbar.Instance.DrawToolbar();
 
+                //Draw Pagebar
+                UserInterface.Pagebar.Instance.DrawPagebar();
+
                 //Draw Main menu
                 if (UserInterface.MainMenu.Instance.isActive == true)
                 {

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using SDL2;
+using UML_Simulator_SDL2.Elements;
 
 namespace UML_Simulator_SDL2
 {
@@ -71,7 +72,7 @@ namespace UML_Simulator_SDL2
                     case SDL.SDL_EventType.SDL_MOUSEBUTTONDOWN:
                         if (!UserInterface.MainMenu.Instance.isActive || UserInterface.MainMenu.Instance.CheckMainMenuInteraction() == false)
                         {
-                            if (UserInterface.Toolbar.Instance.CheckToolbarInteraction() == false)
+                            if (UserInterface.Toolbar.Instance.CheckToolbarInteraction() == false && UserInterface.Pagebar.Instance.CheckPagebarInteraction() == false)
                             {
                                 if (UserInterface.Toolbar.Instance.mode == 0)
                                 {
@@ -114,6 +115,11 @@ namespace UML_Simulator_SDL2
                                 {
                                     UseCaseElement usecaseElement = new UseCaseElement();
                                     usecaseElement.Create();
+                                }
+                                else if (UserInterface.Toolbar.Instance.mode == 9)
+                                {
+                                    SystemBoundary sysbound = new SystemBoundary();
+                                    sysbound.Create();
                                 }
 
                             }

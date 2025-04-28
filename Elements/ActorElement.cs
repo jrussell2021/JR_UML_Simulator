@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SDL2;
 
-namespace UML_Simulator_SDL2
+namespace UML_Simulator_SDL2.Elements
 {
     internal class ActorElement : DiagramElement
     {

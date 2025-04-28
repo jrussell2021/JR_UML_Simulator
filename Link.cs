@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SDL2;
+using UML_Simulator_SDL2.Elements;
 using UML_Simulator_SDL2.UserInterface;
 
 namespace UML_Simulator_SDL2
@@ -89,7 +90,7 @@ namespace UML_Simulator_SDL2
             //Add start link to element
             for (int x = 0; x < ElementManager.Instance.elementList.Count; x++)
             {
-                if (ElementManager.Instance.elementList[x]._type != "link" && ElementManager.Instance.elementList[x].IsMouseInBounds() == true)
+                if (ElementManager.Instance.elementList[x]._type != "link" && ElementManager.Instance.elementList[x]._type != "sysbound" && ElementManager.Instance.elementList[x].IsMouseInBounds() == true)
                 {
                     ElementManager.Instance.elementList[x]._linkStartList.Add(this);
                     ClampStart(ElementManager.Instance.elementList[x]);
@@ -114,7 +115,7 @@ namespace UML_Simulator_SDL2
             //Add end link to element
             for (int x = 0; x < ElementManager.Instance.elementList.Count; x++) 
             {
-                if (ElementManager.Instance.elementList[x]._type != "link" && ElementManager.Instance.elementList[x].IsMouseInBounds() == true) 
+                if (ElementManager.Instance.elementList[x]._type != "link" && ElementManager.Instance.elementList[x]._type != "sysbound" && ElementManager.Instance.elementList[x].IsMouseInBounds() == true) 
                 {
                     ElementManager.Instance.elementList[x]._linkEndList.Add(this);
                     ClampEnd(ElementManager.Instance.elementList[x]);

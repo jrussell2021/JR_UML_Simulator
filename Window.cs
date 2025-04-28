@@ -49,7 +49,7 @@ namespace UML_Simulator_SDL2
         public IntPtr renderer;
         public IntPtr window;
         public bool running = true;
-        public int width = 1280, height = 720;
+        public int width = 1920, height = 1080;
         public int screenPosX = 0, screenPosY = 0;
         public IntPtr font;
 

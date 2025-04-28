@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SDL2;
+using UML_Simulator_SDL2.Elements;
 
 namespace UML_Simulator_SDL2
 {
@@ -191,6 +192,14 @@ namespace UML_Simulator_SDL2
                     DrawOval(elementList[i]._rect.x + (elementList[i]._rect.w / 2), elementList[i]._rect.y + (elementList[i]._rect.h / 2), elementList[i]._rect.h / 2);
                     SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 55, 55, 55, 255);
                     //SDL.SDL_RenderDrawRect(Window.Instance.renderer, ref elementList[i]._rect);
+                    elementList[i]._textBox.DrawText(Window.Instance.renderer);
+                }
+                else if (elementList[i]._type == "sysbound")
+                {
+                    SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 255, 255, 255, 255);
+                    SDL.SDL_RenderFillRect(Window.Instance.renderer, ref elementList[i]._rect);
+                    SDL.SDL_SetRenderDrawColor(Window.Instance.renderer, 55, 55, 55, 255);
+                    SDL.SDL_RenderDrawRect(Window.Instance.renderer, ref elementList[i]._rect);
                     elementList[i]._textBox.DrawText(Window.Instance.renderer);
                 }
                 else

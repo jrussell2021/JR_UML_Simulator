@@ -58,8 +58,16 @@ namespace UML_Simulator_SDL2.UserInterface
             SDL.SDL_ShowSimpleMessageBox(0x0, "Create Activity Diagram", "Creating new activity diagram. The current diagram cannot be saved.", Window.Instance.window);
             MainMenu.Instance.selectedDiagram = 1;
             Toolbar.Instance.UpdateToolbar(MainMenu.Instance.selectedDiagram);
-            ElementManager.Instance.ClearElements();
+            //ElementManager.Instance.ClearElements();
             MainMenu.Instance.isActive = !MainMenu.Instance.isActive;
+
+
+            //Create diagram
+            DiagramManager.Instance.CreateDiagram();
+
+            //Create page
+            Pagebar.Instance.AddPage(DiagramManager.Instance.activeDiagram);
+            Pagebar.Instance.buttonList[Pagebar.Instance.buttonList.Count - 1].OnClick();
         }
 
     }
@@ -204,6 +212,53 @@ namespace UML_Simulator_SDL2.UserInterface
         public override void OnClick()
         {
             Toolbar.Instance.mode = 8;
+        }
+
+    }
+
+    class AddSystemBoundaryButton : Button
+    {
+        public AddSystemBoundaryButton()
+        {
+            text = "Add System Boundary";
+        }
+
+        public override void OnClick()
+        {
+            Toolbar.Instance.mode = 9;
+        }
+
+    }
+    class ExitButton : Button
+    {
+        public ExitButton()
+        {
+            text = "Exit App";
+        }
+
+        public override void OnClick()
+        {
+            Window.Instance.running = false;
+        }
+
+    }
+
+    class PageButton : Button
+    {
+        public PageButton()
+        {
+            text = "Page";
+        }
+
+        Diagram targetDiagram = new Diagram();
+        public void SetDiagram(Diagram pDiagram)
+        {
+            text = "Page";
+            targetDiagram = pDiagram;
+        }
+        public override void OnClick()
+        {
+            DiagramManager.Instance.SetActiveDiagram(targetDiagram);
         }
 
     }
