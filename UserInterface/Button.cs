@@ -87,6 +87,13 @@ namespace UML_Simulator_SDL2.UserInterface
             Toolbar.Instance.UpdateToolbar(MainMenu.Instance.selectedDiagram);
             ElementManager.Instance.ClearElements();
             MainMenu.Instance.isActive = !MainMenu.Instance.isActive;
+
+            //Create diagram
+            DiagramManager.Instance.CreateDiagram();
+
+            //Create page
+            Pagebar.Instance.AddPage(DiagramManager.Instance.activeDiagram);
+            Pagebar.Instance.buttonList[Pagebar.Instance.buttonList.Count - 1].OnClick();
         }
 
     }
@@ -259,6 +266,7 @@ namespace UML_Simulator_SDL2.UserInterface
         public override void OnClick()
         {
             DiagramManager.Instance.SetActiveDiagram(targetDiagram);
+            Toolbar.Instance.UpdateToolbar(MainMenu.Instance.selectedDiagram);
         }
 
     }
