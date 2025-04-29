@@ -260,7 +260,7 @@ namespace UML_Simulator_SDL2.UserInterface
         Diagram targetDiagram = new Diagram();
         public void SetDiagram(Diagram pDiagram)
         {
-            text = "Page " + Pagebar.Instance.buttonList.Count + 1;
+            text = "Page " + (Pagebar.Instance.buttonList.Count + 1);
             targetDiagram = pDiagram;
         }
         public override void OnClick()
