@@ -85,7 +85,7 @@ namespace UML_Simulator_SDL2.UserInterface
             SDL.SDL_ShowSimpleMessageBox(0x0, "Create Use Case Diagram", "Creating new use case diagram. The current diagram cannot be saved.", Window.Instance.window);
             MainMenu.Instance.selectedDiagram = 2;
             Toolbar.Instance.UpdateToolbar(MainMenu.Instance.selectedDiagram);
-            ElementManager.Instance.ClearElements();
+            //ElementManager.Instance.ClearElements();
             MainMenu.Instance.isActive = !MainMenu.Instance.isActive;
 
             //Create diagram
