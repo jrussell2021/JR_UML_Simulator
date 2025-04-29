@@ -36,7 +36,7 @@ namespace UML_Simulator_SDL2.UserInterface
             buttonList.Add(tempButton);
 
             buttonList[buttonList.Count - 1]._rect.x = xpos;
-            buttonList[buttonList.Count - 1]._rect.y = 900; //Change to diff of resolution
+            buttonList[buttonList.Count - 1]._rect.y = Window.Instance.height - 100;
             buttonList[buttonList.Count - 1]._rect.w = 120;
             buttonList[buttonList.Count - 1]._rect.h = 80;
 
@@ -44,7 +44,7 @@ namespace UML_Simulator_SDL2.UserInterface
 
             buttonList[buttonList.Count - 1]._textBox.SetText(Window.Instance.renderer);
             buttonList[buttonList.Count - 1]._textBox._rect.x = xpos + 10;
-            buttonList[buttonList.Count - 1]._textBox._rect.y = 920; //and this
+            buttonList[buttonList.Count - 1]._textBox._rect.y = Window.Instance.height - 80;
             buttonList[buttonList.Count - 1]._textBox._rect.w = 100;
             buttonList[buttonList.Count - 1]._textBox._rect.h = 40;
             xpos += 130;
